@@ -64,4 +64,3 @@ usuario1.addLibro({nombre: "En las montañas de la locura", autor: "H.P. Lovecra
 usuario1.addLibro({nombre: "Los dias del venado", autor: "Liliana Bodoc"})
 usuario1.addLibro({nombre: "Juego de Tronos", autor: "George R.R. Martin"})
 usuario1.getBookNames()
-
