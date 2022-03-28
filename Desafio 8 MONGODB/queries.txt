@@ -1,0 +1,153 @@
+// EJECUTAR EN LA TERMINAL MONGO / MONGOSH
+
+// --- paso 1 y 2 ---
+use ecommerce
+db.createCollection("productos");
+db.createCollection("mensajes");
+db.productos.insertMany([
+  {
+    nameProduct: "Choco Drip",
+    priceProduct: 120,
+    imageProduct: "https://firebasestorage.googleapis.com/v0/b/ecommerce-julioparionav.appspot.com/o/buttercream%2Fbuttercream001.webp?alt=media&token=a45d7308-d705-4fbc-b121-189076ee7e6e"
+  },
+  {
+    nameProduct: "Deli Oreo",
+    priceProduct: 580,
+    imageProduct: "https://firebasestorage.googleapis.com/v0/b/ecommerce-julioparionav.appspot.com/o/buttercream%2Fbuttercream003.webp?alt=media&token=6c4ab734-6089-41a3-abba-b40804a90078"
+  },
+  {
+    nameProduct: "Delicia Duo de Frutas",
+    priceProduct: 900,
+    imageProduct: "https://firebasestorage.googleapis.com/v0/b/ecommerce-julioparionav.appspot.com/o/frutas%2Ffrutas001.webp?alt=media&token=e78573a6-5dc2-40c1-a1f6-9e30c4c021aa"
+  },
+  {
+    nameProduct: "Frescura de Limón",
+    priceProduct: 1280,
+    imageProduct: "https://firebasestorage.googleapis.com/v0/b/ecommerce-julioparionav.appspot.com/o/buttercream%2Fbuttercream004.webp?alt=media&token=68ca28a8-60fd-4a3b-a13a-e52ed169de17"
+  },
+  {
+    nameProduct: "Fresi de Limón",
+    priceProduct: 1700,
+    imageProduct: "https://firebasestorage.googleapis.com/v0/b/ecommerce-julioparionav.appspot.com/o/buttercream%2Fbuttercream002.webp?alt=media&token=5419e95a-dc8e-43ec-b0d7-ac020b6e46ac"
+  },
+  {
+    nameProduct: "Torta de Maracuyá",
+    priceProduct: 2300,
+    imageProduct: "https://firebasestorage.googleapis.com/v0/b/ecommerce-julioparionav.appspot.com/o/frutas%2Ffrutas003.webp?alt=media&token=58f4deeb-a824-4684-af92-fe881ecb1187"
+  },
+  {
+    nameProduct: "Torta Delirium",
+    priceProduct: 2860,
+    imageProduct: "https://firebasestorage.googleapis.com/v0/b/ecommerce-julioparionav.appspot.com/o/frutas%2Ffrutas002.webp?alt=media&token=fb172bc2-084b-4d79-8d90-4310b2684b42"
+  },
+  {
+    nameProduct: "Torta Florinda",
+    priceProduct: 3350,
+    imageProduct: "https://firebasestorage.googleapis.com/v0/b/ecommerce-julioparionav.appspot.com/o/buttercream%2Fbuttercream006.webp?alt=media&token=d16bbedc-65a3-42d8-a3ea-73d628d04527"
+  },
+  {
+    nameProduct: "Torta Happy Birthday de Chocolate",
+    priceProduct: 4320,
+    imageProduct: "https://firebasestorage.googleapis.com/v0/b/ecommerce-julioparionav.appspot.com/o/chocolate%2Fchocolate001.webp?alt=media&token=020c9ffb-1345-4b27-b32f-46be296211a7"
+  },
+  {
+    nameProduct: "Torta Pureza con Cereza",
+    priceProduct: 4990,
+    imageProduct: "https://firebasestorage.googleapis.com/v0/b/ecommerce-julioparionav.appspot.com/o/tres-leches%2Ftresleches001.webp?alt=media&token=694e2585-0855-4d65-9683-f77a573ebac9"
+  }
+]);
+db.mensajes.insertMany([
+  {
+    username: "julio",
+    message: "hola",
+    time: "[21/03/22 08:02:31]"
+  },
+  {
+    username: "cesar",
+    message: "hola!",
+    time: "[21/03/22 08:03:08]"
+  },
+  {
+    username: "julio",
+    message: "¿como estas?",
+    time: "[21/03/22 08:03:29]"
+  },
+  {
+    username: "cesar",
+    message: "bien, ¿y tu?",
+    time: "[21/03/22 08:03:57]"
+  },
+  {
+    username: "julio",
+    message: "muy bien!",
+    time: "[21/03/22 08:04:07]"
+  },
+  {
+    username: "cesar",
+    message: "genial!, y ¿que haces?",
+    time: "[21/03/22 08:05:16]"
+  },
+  {
+    username: "julio",
+    message: "estoy creando una base de datos",
+    time: "[21/03/22 08:06:01]"
+  },
+  {
+    username: "cesar",
+    message: "bueno, te dejo continuar entonces",
+    time: "[21/03/22 08:06:22]"
+  },
+  {
+    username: "julio",
+    message: "gracias, nos vemos",
+    time: "[21/03/22 08:06:38]"
+  },
+  {
+    username: "cesar",
+    message: "cuidate!",
+    time: "[21/03/22 08:06:45]"
+  },
+]);
+
+// --- paso 3 ---
+db.productos.find();
+db.mensajes.find();
+
+// --- paso 4 ---
+db.productos.estimatedDocumentCount();
+db.mensajes.estimatedDocumentCount();
+
+// --- paso 5 ---
+  // 5.a
+db.productos.insertOne({ 
+  nameProduct: "Torta Rosalinda" , 
+  priceProduct: 1100, 
+  imageProduct: "https://firebasestorage.googleapis.com/v0/b/ecommerce-julioparionav.appspot.com/o/buttercream%2Fbuttercream005.webp?alt=media&token=61d54fc1-ca92-4c6f-97df-23a5fc230169" 
+});
+  // 5.b
+db.productos.find({ priceProduct: { $lt: 1000 } });
+db.productos.find(
+  { 
+    $and: [
+      { priceProduct: { $gt: 1000 } }, 
+      { priceProduct: { $lt: 3000 } }
+    ] 
+  }
+);
+db.productos.find({ priceProduct: { $gt: 3000 } });
+db.productos.find().sort({ priceProduct: 1 }).limit(1).skip(2);
+  // 5.c
+db.productos.updateMany({}, { $set: { stock: 100 } });
+  // 5.d
+db.productos.updateMany({ priceProduct: { $gt: 4000 } }, { $set: { stock: 0 } });
+  // 5.e
+db.productos.deleteMany({ priceProduct: { $lt: 1000 } });
+
+// --- paso 6 ---
+use admin
+db.createUser({ user: "pepe", pwd: "asd456", roles: [{ role: "read", db: "ecommerce" }] });
+exit
+mongosh -u pepe
+asd456
+use ecommerce
+db.productos.updateMany({}, { $set: { nameProduct: "Producto Actualizado" } });
