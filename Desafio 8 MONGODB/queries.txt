@@ -58,53 +58,53 @@ db.productos.insertMany([
 ]);
 db.mensajes.insertMany([
   {
-    username: "julio",
+    username: "nicolas",
     message: "hola",
     time: "[21/03/22 08:02:31]"
   },
   {
-    username: "cesar",
+    username: "mayra",
     message: "hola!",
     time: "[21/03/22 08:03:08]"
   },
   {
-    username: "julio",
+    username: "nicolas",
     message: "¿como estas?",
     time: "[21/03/22 08:03:29]"
   },
   {
-    username: "cesar",
-    message: "bien, ¿y tu?",
+    username: "mayra",
+    message: "bien, ¿y vos?",
     time: "[21/03/22 08:03:57]"
   },
   {
-    username: "julio",
+    username: "nicolas",
     message: "muy bien!",
     time: "[21/03/22 08:04:07]"
   },
   {
-    username: "cesar",
-    message: "genial!, y ¿que haces?",
+    username: "mayra",
+    message: "buenisimo!, ¿que estas haciendo?",
     time: "[21/03/22 08:05:16]"
   },
   {
-    username: "julio",
+    username: "nicolas",
     message: "estoy creando una base de datos",
     time: "[21/03/22 08:06:01]"
   },
   {
-    username: "cesar",
-    message: "bueno, te dejo continuar entonces",
+    username: "mayra",
+    message: "bueno, te dejo seguir entonces",
     time: "[21/03/22 08:06:22]"
   },
   {
-    username: "julio",
+    username: "nicolas",
     message: "gracias, nos vemos",
     time: "[21/03/22 08:06:38]"
   },
   {
-    username: "cesar",
-    message: "cuidate!",
+    username: "mayra",
+    message: "saludos!",
     time: "[21/03/22 08:06:45]"
   },
 ]);
