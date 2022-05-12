@@ -1,0 +1,200 @@
+Statistical profiling result from info-v8.log, (125161 ticks, 1 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+  122327   97.7%          C:\WINDOWS\SYSTEM32\ntdll.dll
+   2756    2.2%          C:\Program Files\nodejs\node.exe
+     30    0.0%          C:\WINDOWS\System32\KERNELBASE.dll
+     10    0.0%          C:\WINDOWS\System32\KERNEL32.DLL
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      9    0.0%   23.7%  Function: ^processTimers node:internal/timers:487:25
+      3    0.0%    7.9%  LazyCompile: *remove node:internal/linkedlist:16:16
+      2    0.0%    5.3%  LazyCompile: *resolve node:path:158:10
+      2    0.0%    5.3%  LazyCompile: *pushAsyncContext node:internal/async_hooks:540:26
+      2    0.0%    5.3%  LazyCompile: *emit node:events:475:44
+      2    0.0%    5.3%  Function: ^<anonymous> C:\Users\JULIO\Desktop\cursos ONLINE\CODERHOUSE\curso BACKEND\Clase 32 - tarea\node_modules\mongodb\lib\sdam\monitor.js:296:44
+      1    0.0%    2.6%  RegExp: ^((?:@[^/\\%]+\/)?[^./\\%][^/\\%]*)(\/.*)?$
+      1    0.0%    2.6%  LazyCompile: *processIncomingData C:\Users\JULIO\Desktop\cursos ONLINE\CODERHOUSE\curso BACKEND\Clase 32 - tarea\node_modules\mongodb\lib\cmap\message_stream.js:79:29
+      1    0.0%    2.6%  LazyCompile: *listOnTimeout node:internal/timers:507:25
+      1    0.0%    2.6%  LazyCompile: *dirname node:path:653:10
+      1    0.0%    2.6%  LazyCompile: *deserializeObject C:\Users\JULIO\Desktop\cursos ONLINE\CODERHOUSE\curso BACKEND\Clase 32 - tarea\node_modules\bson\lib\parser\deserializer.js:65:27
+      1    0.0%    2.6%  LazyCompile: *Long.add C:\Users\JULIO\Desktop\cursos ONLINE\CODERHOUSE\curso BACKEND\Clase 32 - tarea\node_modules\bson\lib\long.js:253:35
+      1    0.0%    2.6%  LazyCompile: *Long C:\Users\JULIO\Desktop\cursos ONLINE\CODERHOUSE\curso BACKEND\Clase 32 - tarea\node_modules\bson\lib\long.js:59:18
+      1    0.0%    2.6%  Function: ^tagsStrictEqual C:\Users\JULIO\Desktop\cursos ONLINE\CODERHOUSE\curso BACKEND\Clase 32 - tarea\node_modules\mongodb\lib\sdam\server_description.js:173:25
+      1    0.0%    2.6%  Function: ^realpathSync node:fs:2425:22
+      1    0.0%    2.6%  Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      1    0.0%    2.6%  Function: ^readFileSync node:fs:450:22
+      1    0.0%    2.6%  Function: ^measureRoundTripTime C:\Users\JULIO\Desktop\cursos ONLINE\CODERHOUSE\curso BACKEND\Clase 32 - tarea\node_modules\mongodb\lib\sdam\monitor.js:280:30
+      1    0.0%    2.6%  Function: ^listOnTimeout node:internal/timers:507:25
+      1    0.0%    2.6%  Function: ^get node:internal/bootstrap/pre_execution:370:8
+      1    0.0%    2.6%  Function: ^get C:\Users\JULIO\Desktop\cursos ONLINE\CODERHOUSE\curso BACKEND\Clase 32 - tarea\node_modules\debug\src\common.js:125:9
+      1    0.0%    2.6%  Function: ^fromString C:\Users\JULIO\Desktop\cursos ONLINE\CODERHOUSE\curso BACKEND\Clase 32 - tarea\node_modules\mongodb\lib\utils.js:369:22
+      1    0.0%    2.6%  Function: ^<anonymous> C:\Users\JULIO\Desktop\cursos ONLINE\CODERHOUSE\curso BACKEND\Clase 32 - tarea\node_modules\mongodb\lib\sdam\server.js:56:31
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+     37    0.0%   97.4%  JavaScript
+      0    0.0%    0.0%  C++
+     42    0.0%  110.5%  GC
+  125123  100.0%          Shared libraries
+      1    0.0%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+  122327   97.7%  C:\WINDOWS\SYSTEM32\ntdll.dll
+
+   2756    2.2%  C:\Program Files\nodejs\node.exe
+   1811   65.7%    C:\Program Files\nodejs\node.exe
+    508   28.1%      Function: ^readSync node:fs:684:18
+    508  100.0%        Function: ^tryReadSync node:fs:429:21
+    507   99.8%          Function: ^readFileSync node:fs:450:22
+    467   92.1%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     31    6.1%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      6    1.2%            LazyCompile: ~Module._extensions..json node:internal/modules/cjs/loader:1164:39
+    246   13.6%      Function: ^read node:internal/modules/package_json_reader:16:14
+    220   89.4%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+    198   90.0%          Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+    198  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+     13    5.9%          LazyCompile: ~resolveExports node:internal/modules/cjs/loader:472:24
+      9   69.2%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      4   30.8%            LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      6    2.7%          Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+      6  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      3    1.4%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      3  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     19    7.7%        Function: ^getPackageConfig node:internal/modules/esm/resolve:197:26
+      8   42.1%          LazyCompile: ~packageResolve node:internal/modules/esm/resolve:897:24
+      8  100.0%            Function: ^moduleResolve node:internal/modules/esm/resolve:988:23
+      8   42.1%          Function: ^packageResolve node:internal/modules/esm/resolve:897:24
+      8  100.0%            Function: ^moduleResolve node:internal/modules/esm/resolve:988:23
+      3   15.8%          Function: ^getPackageScopeConfig node:internal/modules/esm/resolve:253:31
+      3  100.0%            Function: ^getPackageType node:internal/modules/esm/resolve:848:24
+      5    2.0%        LazyCompile: ~readPackage node:internal/modules/cjs/loader:290:21
+      5  100.0%          LazyCompile: ~resolveExports node:internal/modules/cjs/loader:472:24
+      5  100.0%            LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+    231   12.8%      Function: ^compileFunction node:vm:308:25
+    230   99.6%        Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+    229   99.6%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+    228   99.6%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+    225   12.4%      Function: ^stat node:internal/modules/cjs/loader:151:14
+    165   73.3%        Function: ^tryFile node:internal/modules/cjs/loader:384:17
+    135   81.8%          Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+    112   83.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+     18   13.3%            Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+      5    3.7%            LazyCompile: ~tryPackage node:internal/modules/cjs/loader:338:20
+     23   13.9%          Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+     23  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      7    4.2%          LazyCompile: ~finalizeEsmResolution node:internal/modules/cjs/loader:939:31
+      7  100.0%            Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+     57   25.3%        Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+     56   98.2%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+     56  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1    1.8%          LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%            LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+    125    6.9%      LazyCompile: ~Module._extensions..node node:internal/modules/cjs/loader:1182:39
+    125  100.0%        Function: ^Module.load node:internal/modules/cjs/loader:969:33
+    125  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+    125  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+     50    2.8%      Function: ^deserializeObject C:\Users\JULIO\Desktop\cursos ONLINE\CODERHOUSE\curso BACKEND\Clase 32 - tarea\node_modules\bson\lib\parser\deserializer.js:65:27
+     49   98.0%        Function: ^deserialize C:\Users\JULIO\Desktop\cursos ONLINE\CODERHOUSE\curso BACKEND\Clase 32 - tarea\node_modules\bson\lib\parser\deserializer.js:36:21
+     49  100.0%          Function: ^deserialize C:\Users\JULIO\Desktop\cursos ONLINE\CODERHOUSE\curso BACKEND\Clase 32 - tarea\node_modules\bson\lib\bson.js:162:21
+     49  100.0%            Function: ^parse C:\Users\JULIO\Desktop\cursos ONLINE\CODERHOUSE\curso BACKEND\Clase 32 - tarea\node_modules\mongodb\lib\cmap\commands.js:577:10
+      1    2.0%        Function: ^deserializeObject C:\Users\JULIO\Desktop\cursos ONLINE\CODERHOUSE\curso BACKEND\Clase 32 - tarea\node_modules\bson\lib\parser\deserializer.js:65:27
+      1  100.0%          LazyCompile: ~deserialize C:\Users\JULIO\Desktop\cursos ONLINE\CODERHOUSE\curso BACKEND\Clase 32 - tarea\node_modules\bson\lib\parser\deserializer.js:36:21
+      1  100.0%            LazyCompile: ~deserialize C:\Users\JULIO\Desktop\cursos ONLINE\CODERHOUSE\curso BACKEND\Clase 32 - tarea\node_modules\bson\lib\bson.js:162:21
+     45    2.5%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     29   64.4%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      5   17.2%          LazyCompile: ~initCJSParse node:internal/modules/esm/translators:58:28
+      5  100.0%            LazyCompile: ~commonjsStrategy node:internal/modules/esm/translators:148:60
+      3   10.3%          Function: ~<anonymous> node:tls:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3   10.3%          Function: ~<anonymous> node:internal/child_process:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3   10.3%          Function: ~<anonymous> node:dns:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3   10.3%          Function: ~<anonymous> node:crypto:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.4%          LazyCompile: ~lazyRequire node:internal/crypto/util:67:21
+      1  100.0%            LazyCompile: ~get node:crypto:287:8
+      1    3.4%          LazyCompile: ~lazyLoadStreams node:fs:2858:25
+      1  100.0%            LazyCompile: ~get ReadStream node:fs:3001:17
+      1    3.4%          Function: ~<anonymous> node:tty:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.4%          Function: ~<anonymous> node:internal/crypto/util:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.4%          Function: ~<anonymous> node:internal/crypto/hkdf:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.4%          Function: ~<anonymous> node:internal/crypto/cipher:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.4%          Function: ~<anonymous> node:internal/cluster/round_robin_handle:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.4%          Function: ~<anonymous> node:http:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.4%          Function: ~<anonymous> node:cluster:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.4%          Function: ~<anonymous> node:assert:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.4%          Function: ~<anonymous> node:_tls_common:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.4%          Function: ~<anonymous> node:_http_common:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     14   31.1%        Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+     14  100.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+     14  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2    4.4%        LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      2  100.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      2  100.0%            LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+     38    2.1%      Function: ^realpathSync node:fs:2425:22
+     38  100.0%        Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+     34   89.5%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+     30   88.2%            Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      3    8.8%            Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+      1    2.9%            LazyCompile: ~tryPackage node:internal/modules/cjs/loader:338:20
+      4   10.5%          Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      4  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+     28    1.5%      LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     28  100.0%        LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      9   32.1%          LazyCompile: ~get BlockList node:net:1826:16
+      9  100.0%            Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      3   10.7%          LazyCompile: ~setupInspectorHooks node:internal/bootstrap/pre_execution:288:29
+      3  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      3   10.7%          LazyCompile: ~initializeReport node:internal/bootstrap/pre_execution:238:26
+      3  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      3   10.7%          Function: ~<anonymous> node:net:1:1
+      3  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    7.1%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    3.6%          LazyCompile: ~initializeSourceMapsHandlers node:internal/bootstrap/pre_execution:516:38
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      1    3.6%          Function: ~<anonymous> node:internal/modules/esm/module_map:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.6%          Function: ~<anonymous> node:internal/modules/esm/loader:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.6%          Function: ~<anonymous> node:internal/modules/esm/get_source:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.6%          Function: ~<anonymous> node:internal/modules/esm/get_format:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.6%          Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.6%          Function: ~<anonymous> node:internal/modules/cjs/loader:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.6%          Function: ~<anonymous> node:internal/blocklist:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     22    1.2%      Function: ^openSync node:fs:576:18
+     22  100.0%        Function: ^readFileSync node:fs:450:22
+     21   95.5%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     21  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    4.5%          Function: ~<anonymous> C:\Users\JULIO\Desktop\cursos ONLINE\CODERHOUSE\curso BACKEND\Clase 32 - tarea\node_modules\saslprep\lib\memory-code-points.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+
