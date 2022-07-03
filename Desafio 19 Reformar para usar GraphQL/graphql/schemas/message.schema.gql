@@ -1,0 +1,33 @@
+type SchemaQuery_Message {
+  _id: ID!
+  author: String
+  text: String
+  createdAt: String
+  updatedAt: String
+}
+
+type SchemaMutation_Message {
+  message: String
+  response: SchemaQuery_Message
+}
+
+input Input_Message {
+  text: String
+}
+
+type getAll  { message: [SchemaQuery_Message]}
+type getById { message(idUser: ID!): [SchemaQuery_Message]} # Recibe el ID del usuario
+type create  { message(idUser: ID!, data: Input_Message!): SchemaMutation_Message} # Recibe el ID del usuario
+type delete  { message(id: ID!): SchemaMutation_Message} # Recibe el ID del mensaje
+type update  { message(id: ID!, data: Input_Message): SchemaMutation_Message} # Recibe el ID del mensaje
+
+type Query {
+  getAll: getAll
+  getById: getById
+}
+
+type Mutation {
+  create: create
+  update: update
+  delete: delete
+}

@@ -1,0 +1,57 @@
+type SchemaQuery_User {
+  _id: ID!
+  firstname: String
+  lastname: String
+  email: String
+  password: String
+  avatar: String
+  location: String
+  phone: String
+  admin: Boolean
+  chatHistory: [String]
+  createdAt: String
+  updatedAt: String
+}
+type SchemaMutation_User {
+  message: String
+  response: SchemaQuery_User
+}
+
+input Input_Register {
+  firstname: String
+  lastname: String
+  userEmail: String
+  password: String
+  avatar: String
+  location: String
+}
+input Input_Login {
+  userEmail: String
+  password: String
+}
+input Input_Update {
+  firstname: String
+  lastname: String
+  email: String
+  password: String
+  avatar: String
+  location: String
+  phone: String
+}
+
+type getAll  { user: [SchemaQuery_User] }
+type getById { user(id: ID!): SchemaQuery_User } # Recibe el ID del usuario
+type delete  { user(id: ID!): SchemaMutation_User } # Recibe el ID del usuario
+type update  { user(id: ID!, data: Input_Update): SchemaMutation_User } # Recibe el ID del usuario
+
+type Query {
+  getAll: getAll
+  getById: getById
+}
+
+type Mutation {
+  # register(data: Input_Register): SchemaMutation_User
+  # login(data: Input_Login): SchemaMutation_User
+  update: update
+  delete: delete
+}

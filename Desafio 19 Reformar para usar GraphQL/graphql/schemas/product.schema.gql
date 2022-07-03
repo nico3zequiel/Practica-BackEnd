@@ -1,0 +1,36 @@
+type SchemaQuery_Product {
+  _id: ID!
+  title: String
+  price: Float
+  thumbnail: String
+  createdAt: String
+  updatedAt: String
+}
+
+type SchemaMutation_Product {
+  message: String
+  response: SchemaQuery_Product
+}
+
+input Input_Product {
+  title: String
+  price: Float
+  thumbnail: String
+}
+
+type getAll  { product: [SchemaQuery_Product]}
+type getById { product(id: ID!): SchemaQuery_Product} # Recibe el ID del producto
+type create  { product(data: Input_Product): SchemaMutation_Product}
+type delete  { product(id: ID!): SchemaMutation_Product} # Recibe el ID del producto
+type update  { product(id: ID!, data: Input_Product): SchemaMutation_Product} # Recibe el ID del producto
+
+type Query {
+  getAll: getAll
+  getById: getById
+}
+
+type Mutation {
+  create: create
+  update: update
+  delete: delete
+}
