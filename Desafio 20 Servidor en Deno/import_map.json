@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "oak": "https://deno.land/x/oak@v10.6.0/mod.ts",
+    "react": "https://dev.jspm.io/react/index.js",
+    "react-dom-server": "https://dev.jspm.io/react-dom@18.2.0/server.js",
+    "servest": "https://deno.land/x/servest@v1.3.1/mod.ts",
+    "@interfaces/": "./models/interfaces/",
+    "@daos/": "./models/daos/"
+  }
+}
